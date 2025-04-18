@@ -1,0 +1,1 @@
+Criar cenário de teste de login e cadastro para automation: https://automationpratice.com.br/
