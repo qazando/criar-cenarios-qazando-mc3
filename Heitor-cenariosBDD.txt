@@ -1,0 +1,41 @@
+Feature: Login
+I as a user
+When I want to place an order
+Then I log in successfully to my account
+
+
+  Scenario: Login successful
+    Given I am on the login screen
+    When I fill in the email field with "eduardofinotti@gmail.com"
+    And I fill in the password field with "1234567"
+    And I click on Sign in
+    Then I see "eduardofinotti@gmail.com"
+
+  Scenario: Login with wrong email
+    Given I am on the login screen
+    When I fill in the email field with "edufinotti@@@gmail.com"
+    And I fill in the password field with "1234567"
+    And I click on Sign in
+    Then I see "E-mail inválido."
+
+  Scenario: Login with wrong password
+    Given I am on the login screen
+    When I fill in the email field with "eduardofinotti@gmail.com"
+    And I fill in the password field with "1"
+    And I click on Sign in
+    Then I see "Senha inválida"
+
+
+  Scenario: Login with empty password field
+    Given I am on the login screen
+    When I fill in the email field with "eduardofinotti@gmail.com"
+    And I fill in the password field with " "
+    And I click on Sign in
+    Then I see "Senha inválida"
+
+Scenario: Login with empty email field
+    Given I am on the login screen
+    When I fill in the email field with " "
+    And I fill in the password field with "1234567"
+    And I click on Sign in
+    Then I see "E-mail inválido."
